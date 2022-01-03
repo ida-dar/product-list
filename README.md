@@ -24,9 +24,6 @@ I decided to present two solutions:
 ### Start Development Mode:
 
 - `yarn start` or `npm start`
-- Open:
-  - on branch `master` open [product-list](https://product-list-recruitment-task.herokuapp.com/api/products) to see the products list.
-  - or switch to branch `solution-2` (`git checkout solution-2`) open [localhost:8000/api/products](http://localhost:8000/api/products) to see the products list.
 
 #### Test the app in Postman:
   - on branch `master` copy base link: https://product-list-recruitment-task.herokuapp.com/api/
@@ -38,7 +35,7 @@ All endpoints are prefixed with `/api`
 - `GET` `/products` - returns the entire list of entries.
 - `GET` `/products/:id` - returns specific entry based on its id.
 - `POST` `/products` - adds a new entry based on req.body.
-- `PUT` `products:/:id` - modification of an entry with a given id based on req.body.
+- `PUT` `/products/:id` - modification of an entry with a given id based on req.body.
 - `DELETE` `/products/:id` - removal of an entry based on its id.
 
 ### Testing of CRUD operations, endpoints and Mongoose models (available on branch `master`):

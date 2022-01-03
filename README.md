@@ -28,6 +28,10 @@ I decided to present two solutions:
   - on branch `master` open [product-list](https://product-list-recruitment-task.herokuapp.com/api/products) to see the products list.
   - or switch to branch `solution-2` (`git checkout solution-2`) open [localhost:8000/api/products](http://localhost:8000/api/products) to see the products list.
 
+#### Test the app in Postman:
+  - on branch `master` copy base link: https://product-list-recruitment-task.herokuapp.com/api/
+  - on branch `solution-2` copy base link: http://localhost:8000/api/
+
 ### Available endpoints
 All endpoints are prefixed with `/api`
 

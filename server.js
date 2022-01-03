@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
+require('dotenv').config();
 
 const productsRoutes = require('./routes/products.routes');
 
@@ -18,8 +19,10 @@ app.use((req, res) => {
 
 const NODE_ENV = process.env.NODE_ENV;
 let dbUrl = '';
+const username = process.env.MONGO_USER;
+const password = process.env.MONGO_PASS;
 
-if(NODE_ENV === 'production') dbUrl = `remote url`;
+if(NODE_ENV === 'production') dbUrl = `mongodb+srv://${username}:${password}@cluster0.zlq2v.mongodb.net/ProductList?retryWrites=true&w=majority`;
 else if(NODE_ENV === 'test') dbUrl = 'mongodb://localhost:27017/ProductListTest';
 else dbUrl = 'mongodb://localhost:27017/ProductList';
 

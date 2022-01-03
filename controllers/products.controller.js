@@ -26,7 +26,6 @@ exports.postOne = async (req, res) => {
   const { name, price } = req.body;
 
   if(name && name.length <= 100 && price){
-
     try {
       const newProduct = new Product({ name: name, price: price, updateDate: null });
       console.log(newProduct)

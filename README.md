@@ -1,7 +1,12 @@
 # Product list 
-This project is a REST API written with Node.js and Express to manage product list. The product list is a remote database created with MongoDB.
+This project is a REST API written with Node.js and Express to manage product list.
 <br><br>
-The app is testable from the browser level or e.g. with Postman.
+I decided to present two solutions:
+- on branch [master](https://github.com/ida-dar/product-list/tree/master) the product list is a remote database created with MongoDB. To test it open [product-list](https://product-list-recruitment-task.herokuapp.com/api/products). Due to lack of front-end and the fact that remote database requires a username and a password (in accordance to secure practices sensitive data shouldn't be commited to public repositories) I decided to save such data in environment-specific values on Heroku.
+- on branch [solution-2](https://github.com/ida-dar/product-list/tree/solution-2) I present the second solution where product list is stored in a db.js file.
+<br>
+
+**Both solutions are testable from the browser level or e.g. with Postman.**
 
 ## Getting Started
 
@@ -19,7 +24,9 @@ The app is testable from the browser level or e.g. with Postman.
 ### Start Development Mode:
 
 - `yarn start` or `npm start`
-- Open [http://localhost:8000/api/products](http://localhost:8000/api/products) to see the products list.
+- Open:
+  - on branch `master` open [product-list](https://product-list-recruitment-task.herokuapp.com/api/products) to see the products list.
+  - or switch to branch `solution-2` (`git checkout solution-2`) open [localhost:8000/api/products](http://localhost:8000/api/products) to see the products list.
 
 ### Available endpoints
 All endpoints are prefixed with `/api`
@@ -30,6 +37,6 @@ All endpoints are prefixed with `/api`
 - `PUT` `products:/:id` - modification of an entry with a given id based on req.body.
 - `DELETE` `/products/:id` - removal of an entry based on its id.
 
-### Testing of CRUD operations, endpoints and Mongoose models:
+### Testing of CRUD operations, endpoints and Mongoose models (available on branch `master`):
 
 - `yarn test:watch` or `npm run test:watch`

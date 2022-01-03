@@ -1,7 +1,12 @@
 # Product list 
-This project is a REST API written with Node.js and Express to manage product list. The product list is a remote database created with MongoDB.
+This project is a REST API written with Node.js and Express to manage product list.
 <br><br>
 The app is testable from the browser level or e.g. with Postman.
+<br><br>
+I decided to present two solutions:
+- on branch [master](https://github.com/ida-dar/product-list/tree/master) the product list is a remote database created with MongoDB. The address (https://product-list-recruitment-task.herokuapp.com/api/products)
+- on branch [solution-2](https://github.com/ida-dar/product-list/tree/solution-2)
+Initially I used MongoDB and Mongoose for the database. However, due to lack of front-end I decided to 
 
 ## Getting Started
 
@@ -19,6 +24,8 @@ The app is testable from the browser level or e.g. with Postman.
 ### Start Development Mode:
 
 - `yarn start` or `npm start`
+- Open:
+  - if you are on branch `master` open published app [](https://product-list-recruitment-task.herokuapp.com/api/products)
 - Open [http://localhost:8000/api/products](http://localhost:8000/api/products) to see the products list.
 
 ### Available endpoints

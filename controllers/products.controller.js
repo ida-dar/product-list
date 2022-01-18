@@ -1,3 +1,4 @@
+const { assert } = require('chai');
 const Product = require('../models/product.model');
 
 exports.getAll = async (req, res) => {
@@ -25,17 +26,32 @@ exports.getById = async (req, res) => {
 exports.postOne = async (req, res) => {
   const { name, price } = req.body;
 
-  if(name && name.length <= 100 && price){
-    try {
-      const newProduct = new Product({ name: name, price: price, updateDate: null });
-      console.log(newProduct)
-      await newProduct.save();
-      res.json({ message: 'OK' });
-    } 
-    catch(err) {
-      res.status(500).json({ message: err });
-    }
+  try {
+    const newProduct = new Product({ name: name, price: price, updateDate: null });
+    const error = newProduct.validateSync();
+    console.log(error);
+    await newProduct.save(function(error) {
+      assert.equal(error.errors['name'].message,
+      'Wrong name format')
+      assert.equal(error.errors['price'].message,
+      'Wrong price')
+      assert.ok(!error.errors['name']);
+      assert.ok(!error.errors['price']);
+    });
+
+    // another option
+    // await newProduct.save();
+    // error.errors['name'].message;
+    // error.errors['price'].message;
+    // assert.ok(!error.errors['name']);
+    // assert.ok(!error.errors['price']);
+  
+    res.json({ message: 'OK' });
   }
+  catch(err) {
+    res.status(500).json({ message: err });
+  }
+
 };
 
 exports.putOneById = async (req, res) => {
